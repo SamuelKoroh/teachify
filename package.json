@@ -9,6 +9,9 @@
     "build": "npm run clean && babel ./src --out-dir ./build-server --copy-files",
     "dev": "nodemon --watch ./src --exec babel-node ./src/app.js"
   },
+  "engines": {
+    "node": "10.4.1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
