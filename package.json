@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node ./build-server/app.js",
-    "clean": "rm -rf build-server && mkdir build-server",
-    "build": "npm run clean && babel ./src --out-dir ./build-server --copy-files",
+    "start": "node ./build/app.js",
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && babel ./src --out-dir ./build",
     "dev": "nodemon --watch ./src --exec babel-node ./src/app.js"
   },
   "engines": {
