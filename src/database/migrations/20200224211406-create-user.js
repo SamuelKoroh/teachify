@@ -8,13 +8,11 @@ module.exports = {
       },
       firstName: {
         type: Sequelize.STRING,
-        allowNull: false,
-        required: true
+        allowNull: false
       },
       lastName: {
         type: Sequelize.STRING,
-        allowNull: false,
-        required: true
+        allowNull: false
       },
       phone: {
         type: Sequelize.STRING
@@ -22,8 +20,7 @@ module.exports = {
       userType: {
         type: Sequelize.ENUM,
         values: ['user','instructor'],
-        allowNull: false,
-        required: true
+        allowNull: false
       },
       gender: {
         type: Sequelize.STRING
@@ -31,8 +28,7 @@ module.exports = {
       email: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true,
-        required: true
+        unique: true
       },
       password: {
         type: Sequelize.STRING,
