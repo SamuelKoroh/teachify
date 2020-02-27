@@ -14,8 +14,9 @@ export default class AuthService{
     }
     
     static async findUserByEmail(email){
-    
-        return User.findOne({where: {email }}).then(data => data).catch(err => new Error(err));
+         const result = await User.findOne({where: {email }});
+        
+         return result;
     }
 
     static async verifyPassword(user, password){
