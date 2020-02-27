@@ -24,10 +24,10 @@ export default class AuthController {
 
     static async register({body}, res){
         try {
-            const userExists = await AuthService.findUserByEmail(body.email);
+        //     const userExists = await AuthService.findUserByEmail(body.email);
 
-        if(userExists)
-            return HttpResponse.badRequest(res, 'The user already exists');
+        // if(userExists)
+        //     return HttpResponse.badRequest(res, 'The user already exists');
         
         const user = await AuthService.register(body);
         const data= await AuthService.generateAuthToken(user);
