@@ -19,7 +19,7 @@ export default class AuthController {
         return HttpResponse.ok(res, data);
        } catch (error) {
            console.log(error);
-        HttpResponse.error(res, error);
+        HttpResponse.badRequest(res, error);
        }
     }
 
@@ -36,7 +36,7 @@ export default class AuthController {
         return HttpResponse.created(res, data); 
         } catch (error) {
             console.log(error);
-            HttpResponse.error(res, error);
+            HttpResponse.badRequest(res, error);
         }
     }
 
