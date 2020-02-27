@@ -16,7 +16,7 @@ export default class AuthService{
     static async findUserByEmail(email){
          const result = await User.findOne({where: {email }});
 
-         return result !==null ? result.dataValues : result;
+         return result.dataValues !==null ? result.dataValues : null;
     }
 
     static async verifyPassword(user, password){
