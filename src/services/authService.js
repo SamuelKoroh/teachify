@@ -16,20 +16,20 @@ export default class AuthService{
     static async findUserByEmail(email){
          const result = await User.findOne({where: {email }});
         
-         return result;
+         return result !== null ? result.dataValues : false;
     }
 
-    static async verifyPassword(user, password){
-        return await bcrypt.compare(password, user.password);
+    static async verifyPassword(encryptedPassword, password){
+        return await bcrypt.compare(password, encryptedPassword);
     }
 
 
-    static async generateAuthToken(user){
-        const {password, ...data} = user;
+    static async generateAuthToken(data){
+        const {password, ...user} = data;
         const secret = process.env.JWT_SECRET;
 
-        data.token = await jwt.sign(data, secret, {expiresIn: '4hr'});
+        user.token = await jwt.sign(user, secret, {expiresIn: '4hr'});
 
-        return data;
+        return user;
     }
 }
