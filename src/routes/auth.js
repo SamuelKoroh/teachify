@@ -7,7 +7,7 @@ import authenticate from '../middlewares/authenticate';
 const router = Router();
 
 router.post("/register",  validator(registerSchema), AuthController.register);
-router.post("/login", authenticate, validator(loginSchema), AuthController.login);
+router.post("/login",  validator(loginSchema), AuthController.login);
 
 
 export default router;
