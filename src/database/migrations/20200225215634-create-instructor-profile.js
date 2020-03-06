@@ -12,7 +12,7 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
-      exprience: {
+      experience: {
         type: Sequelize.STRING
       },
       course: {

@@ -2,10 +2,10 @@ import HttpResponse from "../utils/httpResponse";
 
 const validator = (schema, location = "body") => async (req, res, next) =>{
     try {
-        await schema.validateAsync(req[location], {abortEarly: false});
+        await schema.validateAsync(req[location]);
         next()
     } catch (ex) {
-        const errors = ex.details.map(e => ({ key: e.context.key, message: e.message }));
+        const errors = ex.details[0].message;
 
         HttpResponse.badRequest(res, errors);
     }

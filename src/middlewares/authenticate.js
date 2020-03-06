@@ -9,8 +9,10 @@ const authenticate = async (req, res, next) =>{
     if(!token)
         return HttpResponse.badRequest(res, 'token is required to access this area')
     
-    await jwt.verify(token, secret);
-
+    const user = await jwt.verify(token, secret);
+    
+    req.userId = user.id;
+    
     next();
    } catch (error) {
      HttpResponse.unauthorized(res, 'You don\'t have access to this area');

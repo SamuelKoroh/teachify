@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     description: {
       type: DataTypes.STRING
     },
-    exprience: {
+    experience: {
       type: DataTypes.STRING
     },
     course: {

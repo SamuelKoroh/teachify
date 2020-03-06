@@ -30,8 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     password: {
       type: DataTypes.STRING,
       required: true
-    },
-
+    }
   }, {});
 
   User.associate = models  => {
